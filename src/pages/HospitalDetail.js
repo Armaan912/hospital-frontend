@@ -169,11 +169,11 @@ const HospitalDetail = () => {
 										hospital.mainImage
 											? hospital.mainImage.startsWith("http")
 												? hospital.mainImage
-												: `hospital-backend-elzv.onrender.com/api${hospital.mainImage}`
+												: `https://hospital-backend-elzv.onrender.com${hospital.mainImage}`
 											: hospital.gallery && hospital.gallery[0]
 											? hospital.gallery[0].startsWith("http")
 												? hospital.gallery[0]
-												: `hospital-backend-elzv.onrender.com/api${hospital.gallery[0]}`
+												: `https://hospital-backend-elzv.onrender.com${hospital.gallery[0]}`
 											: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&h=400&fit=crop&crop=center"
 									}
 									className="img-fluid rounded"
@@ -802,7 +802,7 @@ const HospitalDetail = () => {
 																src={
 																	image.startsWith("http")
 																		? image
-																		: `hospital-backend-elzv.onrender.com/api${image}`
+																		: `https://hospital-backend-elzv.onrender.com${image}`
 																}
 																className="img-fluid rounded"
 																alt={`Gallery ${index + 1}`}
@@ -1310,7 +1310,7 @@ const HospitalDetail = () => {
 															similarHospital.mainImage
 																? similarHospital.mainImage.startsWith("http")
 																	? similarHospital.mainImage
-																	: `hospital-backend-elzv.onrender.com/api${similarHospital.mainImage}`
+																	: `https://hospital-backend-elzv.onrender.com${similarHospital.mainImage}`
 																: `https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=280&h=180&fit=crop&crop=center`
 														}
 														className="card-img-top"
