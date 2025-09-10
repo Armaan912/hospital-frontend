@@ -169,11 +169,11 @@ const HospitalDetail = () => {
 										hospital.mainImage
 											? hospital.mainImage.startsWith("http")
 												? hospital.mainImage
-												: `hospital-backend-elzv.onrender.com/${hospital.mainImage}`
+												: `hospital-backend-elzv.onrender.com/api${hospital.mainImage}`
 											: hospital.gallery && hospital.gallery[0]
 											? hospital.gallery[0].startsWith("http")
 												? hospital.gallery[0]
-												: `hospital-backend-elzv.onrender.com/${hospital.gallery[0]}`
+												: `hospital-backend-elzv.onrender.com/api${hospital.gallery[0]}`
 											: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&h=400&fit=crop&crop=center"
 									}
 									className="img-fluid rounded"
@@ -221,7 +221,7 @@ const HospitalDetail = () => {
 														src={
 															image.startsWith("http")
 																? image
-																: `hospital-backend-elzv.onrender.com/${image}`
+																: `https://hospital-backend-elzv.onrender.com/${image}`
 														}
 														className="img-fluid rounded"
 														alt={`Gallery ${index + 2}`}
@@ -231,8 +231,7 @@ const HospitalDetail = () => {
 															width: "100%"
 														}}
 														onError={(e) => {
-															e.target.style.display = "none";
-															e.target.nextSibling.style.display = "flex";
+															e.currentTarget.style.display = "none";
 														}}
 													/>
 													{/* Gallery count badge on the last image */}
@@ -249,22 +248,8 @@ const HospitalDetail = () => {
 													)}
 												</div>
 											</div>
-									  ))
-									: // Fallback if no gallery images
-									  Array.from({ length: 4 }).map((_, index) => (
-											<div key={index} className="col-6">
-												<img
-													src={`https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&h=190&fit=crop&crop=center&random=${index}`}
-													className="img-fluid rounded"
-													alt={`Gallery ${index + 2}`}
-													style={{
-														height: "190px",
-														objectFit: "cover",
-														width: "100%"
-													}}
-												/>
-											</div>
-									  ))}
+										))
+									: null}
 							</div>
 						</div>
 					</div>
@@ -817,7 +802,7 @@ const HospitalDetail = () => {
 																src={
 																	image.startsWith("http")
 																		? image
-																		: `hospital-backend-elzv.onrender.com/${image}`
+																		: `hospital-backend-elzv.onrender.com/api${image}`
 																}
 																className="img-fluid rounded"
 																alt={`Gallery ${index + 1}`}
@@ -826,11 +811,7 @@ const HospitalDetail = () => {
 																	objectFit: "cover",
 																	width: "100%"
 																}}
-																onError={(e) => {
-																	e.target.src = `https://via.placeholder.com/300x200/007bff/ffffff?text=Gallery+${
-																		index + 1
-																	}`;
-																}}
+																onError={(e) => { e.currentTarget.style.display = "none"; }}
 															/>
 															<div className="position-absolute bottom-0 start-0 m-2">
 																<i className="fas fa-camera text-white"></i>
@@ -1329,7 +1310,7 @@ const HospitalDetail = () => {
 															similarHospital.mainImage
 																? similarHospital.mainImage.startsWith("http")
 																	? similarHospital.mainImage
-																	: `hospital-backend-elzv.onrender.com/${similarHospital.mainImage}`
+																	: `hospital-backend-elzv.onrender.com/api${similarHospital.mainImage}`
 																: `https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=280&h=180&fit=crop&crop=center`
 														}
 														className="card-img-top"
