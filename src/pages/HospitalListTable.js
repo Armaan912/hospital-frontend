@@ -225,7 +225,7 @@ const HospitalListTable = () => {
                         <div className="d-flex align-items-center">
                           {hospital.mainImage ? (
                             <img
-                              src={hospital.mainImage.startsWith('http') ? hospital.mainImage : `http://localhost:5000${hospital.mainImage}`}
+                              src={hospital.mainImage.startsWith('http') ? hospital.mainImage : `hospital-backend-elzv.onrender.com${hospital.mainImage}`}
                               alt={hospital.name}
                               className="rounded me-3"
                               style={{ width: '40px', height: '40px', objectFit: 'cover' }}

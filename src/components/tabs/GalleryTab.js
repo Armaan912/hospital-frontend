@@ -36,7 +36,7 @@ const GalleryTab = ({ hospital }) => {
             <div key={index} className="col-md-4">
               <div className="position-relative">
                 <img 
-                  src={image.startsWith('http') ? image : `http://localhost:5000${image}`} 
+                  src={image.startsWith('http') ? image : `hospital-backend-elzv.onrender.com${image}`} 
                   className="img-fluid rounded" 
                   alt={`Gallery ${index + 1}`}
                   style={{ height: '200px', objectFit: 'cover', width: '100%' }}

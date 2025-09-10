@@ -148,7 +148,7 @@ const HospitalDetail = () => {
             <div className="col-lg-8">
               <div className="position-relative">
                 <img 
-                  src={hospital.mainImage ? (hospital.mainImage.startsWith('http') ? hospital.mainImage : `http://localhost:5000${hospital.mainImage}`) : (hospital.gallery && hospital.gallery[0] ? (hospital.gallery[0].startsWith('http') ? hospital.gallery[0] : `http://localhost:5000${hospital.gallery[0]}`) : 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&h=400&fit=crop&crop=center')} 
+                  src={hospital.mainImage ? (hospital.mainImage.startsWith('http') ? hospital.mainImage : `hospital-backend-elzv.onrender.com${hospital.mainImage}`) : (hospital.gallery && hospital.gallery[0] ? (hospital.gallery[0].startsWith('http') ? hospital.gallery[0] : `hospital-backend-elzv.onrender.com${hospital.gallery[0]}`) : 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&h=400&fit=crop&crop=center')} 
                   className="img-fluid rounded" 
                   alt="Main hospital view"
                   style={{ height: '400px', objectFit: 'cover', width: '100%' }}
@@ -186,7 +186,7 @@ const HospitalDetail = () => {
                     <div key={index} className="col-6">
                       <div className="position-relative h-100">
                         <img 
-                          src={image.startsWith('http') ? image : `http://localhost:5000${image}`} 
+                          src={image.startsWith('http') ? image : `hospital-backend-elzv.onrender.com${image}`} 
                           className="img-fluid rounded" 
                           alt={`Gallery ${index + 2}`}
                           style={{ height: '190px', objectFit: 'cover', width: '100%' }}
@@ -547,7 +547,7 @@ const HospitalDetail = () => {
                         <div key={index} className="col-md-4">
                           <div className="position-relative">
                             <img 
-                              src={image.startsWith('http') ? image : `http://localhost:5000${image}`} 
+                              src={image.startsWith('http') ? image : `hospital-backend-elzv.onrender.com${image}`} 
                               className="img-fluid rounded" 
                               alt={`Gallery ${index + 1}`}
                               style={{ height: '200px', objectFit: 'cover', width: '100%' }}
@@ -912,7 +912,7 @@ const HospitalDetail = () => {
                       <div className="card border-0 shadow-sm position-relative" style={{ borderRadius: '12px', overflow: 'hidden' }}>
                         <div className="position-relative">
                           <img 
-                            src={similarHospital.mainImage ? (similarHospital.mainImage.startsWith('http') ? similarHospital.mainImage : `http://localhost:5000${similarHospital.mainImage}`) : `https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=280&h=180&fit=crop&crop=center`}
+                            src={similarHospital.mainImage ? (similarHospital.mainImage.startsWith('http') ? similarHospital.mainImage : `hospital-backend-elzv.onrender.com${similarHospital.mainImage}`) : `https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=280&h=180&fit=crop&crop=center`}
                             className="card-img-top"
                             alt={similarHospital.name}
                             style={{ height: '180px', objectFit: 'cover', width: '100%' }}

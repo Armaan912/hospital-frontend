@@ -9,7 +9,7 @@ const HospitalCard = ({ hospital }) => {
           <div className="col-6 position-relative p-3">
             {hospital.mainImage && (
               <img 
-                src={`http://localhost:5000${hospital.mainImage}`} 
+                src={`hospital-backend-elzv.onrender.com${hospital.mainImage}`} 
                 className="img-fluid h-100 rounded-3" 
                 alt={hospital.name}
                 style={{ objectFit: 'cover' }}
