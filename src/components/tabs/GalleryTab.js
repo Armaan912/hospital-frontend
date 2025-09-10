@@ -39,7 +39,7 @@ const GalleryTab = ({ hospital }) => {
 										src={
 											image.startsWith("http")
 												? image
-												: `https://hospital-backend-elzv.onrender.com/${image}`
+												: `hospital-backend-elzv.onrender.com/${image}`
 										}
 										className="img-fluid rounded"
 										alt={`Gallery ${index + 1}`}

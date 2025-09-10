@@ -240,7 +240,7 @@ const HospitalListTable = () => {
 															src={
 																hospital.mainImage.startsWith("http")
 																	? hospital.mainImage
-																	: `https://hospital-backend-elzv.onrender.com/${hospital.mainImage}`
+																	: `hospital-backend-elzv.onrender.com/${hospital.mainImage}`
 															}
 															alt={hospital.name}
 															className="rounded me-3"

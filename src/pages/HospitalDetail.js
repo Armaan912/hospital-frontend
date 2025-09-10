@@ -33,18 +33,6 @@ const HospitalDetail = () => {
 		}
 	}, [id]);
 
-	// Resolve and normalize image URLs coming from API
-	const getImageUrl = (input) => {
-		if (!input) return null;
-		let url = String(input).trim();
-		// Fix protocol missing colon (e.g., https// or http//)
-		url = url.replace(/^https(?=\/\/)/i, "https:").replace(/^http(?=\/\/)/i, "http:");
-		if (/^https?:\/\//i.test(url)) return url;
-		url = url.startsWith("/") ? url : `/${url}`;
-		const BASE = "https://hospital-backend-elzv.onrender.com";
-		return `${BASE}${url}`.replace(/([^:]\/)\/+/, "$1");
-	};
-
 	useEffect(() => {
 		fetchHospital();
 	}, [fetchHospital]);
@@ -179,9 +167,13 @@ const HospitalDetail = () => {
 								<img
 									src={
 										hospital.mainImage
-											? getImageUrl(hospital.mainImage)
+											? hospital.mainImage.startsWith("http")
+												? hospital.mainImage
+												: `hospital-backend-elzv.onrender.com/${hospital.mainImage}`
 											: hospital.gallery && hospital.gallery[0]
-											? getImageUrl(hospital.gallery[0])
+											? hospital.gallery[0].startsWith("http")
+												? hospital.gallery[0]
+												: `hospital-backend-elzv.onrender.com/${hospital.gallery[0]}`
 											: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&h=400&fit=crop&crop=center"
 									}
 									className="img-fluid rounded"
@@ -226,7 +218,11 @@ const HospitalDetail = () => {
 											<div key={index} className="col-6">
 												<div className="position-relative h-100">
 													<img
-														src={getImageUrl(image)}
+														src={
+															image.startsWith("http")
+																? image
+																: `hospital-backend-elzv.onrender.com/${image}`
+														}
 														className="img-fluid rounded"
 														alt={`Gallery ${index + 2}`}
 														style={{
@@ -821,7 +817,7 @@ const HospitalDetail = () => {
 																src={
 																	image.startsWith("http")
 																		? image
-																		: `https://hospital-backend-elzv.onrender.com/${image}`
+																		: `hospital-backend-elzv.onrender.com/${image}`
 																}
 																className="img-fluid rounded"
 																alt={`Gallery ${index + 1}`}
@@ -1331,7 +1327,9 @@ const HospitalDetail = () => {
 													<img
 														src={
 															similarHospital.mainImage
-																? getImageUrl(similarHospital.mainImage)
+																? similarHospital.mainImage.startsWith("http")
+																	? similarHospital.mainImage
+																	: `hospital-backend-elzv.onrender.com/${similarHospital.mainImage}`
 																: `https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=280&h=180&fit=crop&crop=center`
 														}
 														className="card-img-top"
